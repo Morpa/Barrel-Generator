@@ -14,7 +14,7 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Go
       uses: actions/setup-go@v4
@@ -38,7 +38,7 @@ jobs:
         GOOS=linux GOARCH=arm64 go build -o build/barrel-gen-linux-arm64 .
 
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: barrel-gen-binaries
         path: build/
@@ -51,7 +51,7 @@ jobs:
     
     steps:
       - name: Download all artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: barrel-gen-binaries
           path: build
